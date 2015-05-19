@@ -11,6 +11,7 @@ require 'rails/test_help'
 require "minitest/autorun"
 require "minitest/reporters"
 require 'capybara/rails'
+require 'capybara/poltergeist'
 
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(:color => true)]
 
@@ -34,7 +35,8 @@ class ActionDispatch::IntegrationTest
   # Add more helper methods to be used by all tests here...
   def setup
     # Capybara.current_driver = Capybara.javascript_driver # :selenium by default
-    Capybara.current_driver = :webkit
+    # Capybara.current_driver = :webkit
+    Capybara.javascript_driver = :poltergeist
   end
 
   def teardown
