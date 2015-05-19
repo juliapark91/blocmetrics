@@ -15,7 +15,6 @@ require 'capybara/rails'
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(:color => true)]
 
 class ActiveSupport::TestCase
-  include Devise::TestHelpers
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
@@ -34,14 +33,13 @@ class ActionDispatch::IntegrationTest
 
   # Add more helper methods to be used by all tests here...
   def setup
-    Capybara.current_driver = Capybara.javascript_driver # :selenium by default
-    # Capybara.current_driver = :webkit
+    # Capybara.current_driver = Capybara.javascript_driver # :selenium by default
+    Capybara.current_driver = :webkit
   end
 
   def teardown
     Capybara.reset_sessions!
     Capybara.use_default_driver
-    Timecop.return
   end
   
 end
