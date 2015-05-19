@@ -12,7 +12,7 @@ class UserSignsUpTest < ActionDispatch::IntegrationTest
     fill_in 'user_password', with: '12345678'
     fill_in 'user_password_confirmation', with: '12345678'
 
-    click_button 'Sign up'
+    click_button 'Sign Up'
     
     assert page.has_content?( 'A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.' ) 
   end

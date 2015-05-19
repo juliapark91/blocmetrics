@@ -44,4 +44,33 @@ class ActionDispatch::IntegrationTest
     Capybara.use_default_driver
   end
   
+  def sign_up( email, password )
+    visit root_path
+
+    click_link 'Sign Up'
+
+    fill_in 'First name', with: Faker::Name.first_name
+    fill_in 'Last name', with: Faker::Name.last_name
+    fill_in 'Email', with: email
+    fill_in 'user_password', with: password
+    fill_in 'user_password_confirmation', with: password
+
+    click_button 'Sign Up'
+  end
+
+  def sign_in( email, password )
+    visit root_path
+
+    click_link 'Sign In'
+
+    fill_in 'Email', with: email
+    fill_in 'Password', with: password
+
+    click_button 'Sign In'
+  end
+
+  def sign_out
+    click_link 'Sign Out'
+  end
+  
 end
