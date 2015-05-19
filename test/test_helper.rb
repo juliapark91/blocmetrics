@@ -36,7 +36,7 @@ class ActionDispatch::IntegrationTest
   def setup
     # Capybara.current_driver = Capybara.javascript_driver # :selenium by default
     # Capybara.current_driver = :webkit
-    Capybara.javascript_driver = :poltergeist
+    Capybara.current_driver = :poltergeist
   end
 
   def teardown
