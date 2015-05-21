@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby                            '2.2.1'
+ruby                            '2.2.2'
 
 gem 'rails',                    '4.2.1'
 
@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capybara-webkit',        '~> 1.5.0'
   gem 'minitest',               '~> 5.5.1'
   gem 'minitest-reporters',     '~> 1.0.11'
+  gem 'poltergeist',            '~> 1.6.0'
   gem 'populator',              '~> 1.0.0'
   gem 'rack-mini-profiler',     '~> 0.9.3'
   gem 'rails-footnotes',        '>= 4.1.6', '<5'
