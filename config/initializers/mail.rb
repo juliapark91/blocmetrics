@@ -1,5 +1,4 @@
 ActionMailer::Base.delivery_method = :smtp
-require 'development_mail_interceptor'
 if Rails.env.production?
   ActionMailer::Base.smtp_settings = {
     :tls                  => false,
