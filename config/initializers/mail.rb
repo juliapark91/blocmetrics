@@ -26,3 +26,4 @@ else
   
   ActionMailer::Base.register_interceptor( DevelopmentMailInterceptor )
 end
+
