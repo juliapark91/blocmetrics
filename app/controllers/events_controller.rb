@@ -37,7 +37,7 @@ class EventsController < ApplicationController
     authorize @event
 
     if @event.update_attributes( event_params )
-      redirect_to @event
+      redirect_to @event, notice: "Application updated successfully."
     else
       flash[:error] = "Error updating applcation. Please try again."
       render :edit
