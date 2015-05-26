@@ -1,5 +1,0 @@
-<% if @event.destroyed? %>
-  $(<%= dom_id( @event ) %>).fadeOut(900);
-<% else %>
-  $(<%= dom_id( @event ) %>).prepend("<div class='alert alert-danger'><%= flash[:error] %></div>");
-<% end %>

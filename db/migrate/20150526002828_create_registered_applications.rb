@@ -1,6 +1,6 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateRegisteredApplications < ActiveRecord::Migration
   def change
-    create_table :events do |t|
+    create_table :registered_applications do |t|
       t.string :url
       t.string :name
       t.references :user, index: true, foreign_key: true
