@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build( event_params )
+    @event = Event.new( event_params.merge( user_id: current_user.id ) )
     authorize @event
 
     if @event.save
@@ -64,6 +64,6 @@ class EventsController < ApplicationController
 private
 
   def event_params
-    params.require(:event).permit(:name, :url)
+    params.require(:event).permit(:name, :url, :user_id)
   end
 end
