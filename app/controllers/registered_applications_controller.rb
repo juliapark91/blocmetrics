@@ -9,7 +9,7 @@ class RegisteredApplicationsController < ApplicationController
     @registered_application = RegisteredApplication.find(params[:id])
     authorize @registered_application
 
-    @events = @registered_application.events.group_by(&:name)
+    @events = @registered_application.events(:group => 'name')
   end
 
   def new
