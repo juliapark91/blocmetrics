@@ -9,11 +9,11 @@
         <%= link_to "Delete", registered_application_path(@registered_application), method: :delete, remote: true, class: 'btn btn-danger' %>
       <% end %>
   </div>
-    <% @events.group_by(&:name).each do |name, events| %>
-      <div>
-        <h3><%= name %></h3>
-      </div>
-    <% end %>
+  <% @events.group_by(&:name).each do |name, events| %>
+    <div>
+      <h3><%= name %></h3>
+    </div>
+  <% end %>
   <div>
     <h3>Total Events = <%= @events.count %></h3>
   </div>
