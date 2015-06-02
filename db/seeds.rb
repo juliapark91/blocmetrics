@@ -34,6 +34,7 @@ registered_applications = RegisteredApplication.all
 
 registered_applications.each do | registered_application |
   # Create Events
+<<<<<<< HEAD
   Event.create!(
     registered_application: registered_application,
     user_id: registered_application.user_id,
