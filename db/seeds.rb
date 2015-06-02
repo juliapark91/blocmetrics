@@ -37,7 +37,7 @@ registered_applications.each do | registered_application |
   5.times do
     Event.create!(
       registered_application: registered_application,
-      #user_id: registered_application.user_id,
+      user_id: registered_application.user_id,
       name: Faker::Lorem.word
       )
   end
