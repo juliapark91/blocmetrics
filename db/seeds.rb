@@ -34,13 +34,35 @@ registered_applications = RegisteredApplication.all
 
 registered_applications.each do | registered_application |
   # Create Events
-  5.times do
-    Event.create!(
-      registered_application: registered_application,
-      user_id: registered_application.user_id,
-      name: Faker::Lorem.word
-      )
-  end
+  Event.create!(
+    registered_application: registered_application,
+    user_id: registered_application.user_id,
+    name: "Level 1"
+    )
+
+  Event.create!(
+    registered_application: registered_application,
+    user_id: registered_application.user_id,
+    name: "Level 2"
+    )
+
+  Event.create!(
+    registered_application: registered_application,
+    user_id: registered_application.user_id,
+    name: "Level 3"
+    )
+
+  Event.create!(
+    registered_application: registered_application,
+    user_id: registered_application.user_id,
+    name: "Level 4"
+    )
+
+  Event.create!(
+    registered_application: registered_application,
+    user_id: registered_application.user_id,
+    name: "Level 5"
+    )
 end
 
 puts "#{User.count} users created"
