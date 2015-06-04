@@ -21,6 +21,12 @@ member.skip_confirmation!
 member.save!
 
 # Create Registered Application
+RegisteredApplication.create!(
+  user: users.sample,
+  name: 'Valid Application',
+  url: 'http://registered_application.com'
+  ) 
+
 5.times do
   RegisteredApplication.create!(
     user: users.sample,
