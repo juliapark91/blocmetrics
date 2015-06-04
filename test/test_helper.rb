@@ -1,6 +1,6 @@
 if ENV['COVERAGE'] == 'true'
-  require "simplecov"
-  SimpleCov.start "rails"
+  require 'simplecov'
+  SimpleCov.start 'rails'
 end
  
 ENV['RAILS_ENV'] ||= 'test'
@@ -8,10 +8,12 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
-require "minitest/autorun"
-require "minitest/reporters"
+require 'minitest/autorun'
+require 'minitest/reporters'
 require 'capybara/rails'
 require 'capybara/poltergeist'
+
+Dir[Rails.root.join( "test/support/**/*" )].each { |f| require f }
 
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new(:color => true)]
 
@@ -26,14 +28,12 @@ class ActionController::TestCase
   include Devise::TestHelpers
   
   # Add more helper methods to be used by all tests here...
-  def json( body )
-    JSON.parse( body, symbolize_name: true )
-  end
 end
 
 class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests
   include Capybara::DSL
+  include TestAPIHelper
 
   # Add more helper methods to be used by all tests here...
   def setup
