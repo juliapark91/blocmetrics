@@ -6,7 +6,7 @@ module API
     test "user creates a event successfully" do
       registered_application = registered_applications(:valid)
       
-      assert_difference('Event.count') do
+      assert_difference( 'Event.count' ) do
         post '/api/events', 
           { event:
             { name: 'foobar' }
@@ -19,9 +19,10 @@ module API
     end
   
     test "user creates an event unsuccessfully" do
+      skip
       registered_application = registered_applications(:invalid)
       
-      assert_difference('Event.count') do
+      assert_no_difference( 'Event.count' ) do
         post '/api/events', 
           { event:
             { name: nil }
