@@ -3,7 +3,7 @@ require 'test_helper'
 module API
 
   class UserCreatesEventTest < ActionDispatch::IntegrationTest    
-    test "user creates a event successfully" do
+    test "should create test successfully" do
       registered_application = registered_applications(:valid)
       
       assert_difference( 'Event.count' ) do
@@ -18,8 +18,25 @@ module API
       assert_equal Mime::JSON, response.content_type
     end
   
-    test "user creates an event unsuccessfully" do
-      skip
+    test "should not create an event with invalid URL" do
+      registered_application = registered_applications(:invalid)
+      
+      assert_no_difference( 'Event.count' ) do
+        post '/api/events', 
+          { event:
+            { name: foobar  }
+          }.to_json,
+          { 'Accept': Mime::JSON, 'Content-Type': Mime::JSON.to_s, "Origin": registered_application.url }
+      end
+        
+      assert_equal 422, response.status
+      assert_equal Mime::JSON, response.content_type
+      
+      error_response = json( response.body )
+      assert_equal {error: "#{registered_application.url} does not exist" }, error_response
+    end
+    
+    test "should not create an event with missing event name" do
       registered_application = registered_applications(:invalid)
       
       assert_no_difference( 'Event.count' ) do
@@ -32,6 +49,9 @@ module API
         
       assert_equal 422, response.status
       assert_equal Mime::JSON, response.content_type
+      
+      error_response = json( response.body )
+      assert_equal { name: ["can't be blank"] }, error_response
     end
   end
 
