@@ -26,6 +26,9 @@ class ActionController::TestCase
   include Devise::TestHelpers
   
   # Add more helper methods to be used by all tests here...
+  def json( body )
+    JSON.parse( body, symbolize_name: true )
+  end
 end
 
 class ActionDispatch::IntegrationTest

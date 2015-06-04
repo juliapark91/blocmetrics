@@ -12,7 +12,6 @@ module API
             { name: 'foobar' }
           }.to_json,
           { 'Accept': Mime::JSON, 'Content-Type': Mime::JSON.to_s, "Origin": registered_application.url }
-        end
       end
       
       assert_equal 201, response.status
