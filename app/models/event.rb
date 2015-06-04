@@ -2,12 +2,12 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
-#  url        :string
-#  name       :string
-#  user_id    :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                        :integer          not null, primary key
+#  name                      :string
+#  registered_application_id :integer
+#  created_at                :datetime         not null
+#  updated_at                :datetime         not null
+#  user_id                   :integer
 #
 
 class Event < ActiveRecord::Base
