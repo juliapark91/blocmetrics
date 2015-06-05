@@ -5,7 +5,11 @@ class API::EventsController < ApplicationController
     registered_application = RegisteredApplication.find_by(url: request.env['HTTP_ORIGIN'])
     event = registered_application.events.build( event_params )  
 
-    { }.to_json
+    if event.save
+      render json: event, status: :created
+    else
+      render event.errors, status: :unprocessable_entity
+    end
 
   end
 
