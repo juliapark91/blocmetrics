@@ -11,7 +11,7 @@ class API::EventsController < ApplicationController
         if @event.save
           render json: @event, status: :created
         else
-          render @event.errors, status: :unprocessable_entity
+          render json: { error: "missing event name" }, status: :unprocessable_entity
         end
     end
 
