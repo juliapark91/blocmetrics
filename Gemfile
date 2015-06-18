@@ -18,6 +18,8 @@ gem 'jquery-rails',             '~> 4.0.3'
 
 gem 'pundit',                   '~> 1.0.0'
 
+gem 'rack-cors',                '~> 0.4.0', :require => 'rack/cors'
+
 gem 'sass-rails',               '~> 5.0'
 gem 'simple_form',              '~> 3.1.0'
 
