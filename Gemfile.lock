@@ -252,7 +252,7 @@ DEPENDENCIES
   faker!
   figaro (~> 1.1.0)
   foreman (~> 0.78.0)
-  groupdate
+  groupdate (~> 2.4.0)
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.3)
   minitest (~> 5.5.1)
