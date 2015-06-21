@@ -6,12 +6,15 @@ gem 'rails',                    '4.2.1'
 
 gem 'bootstrap-sass',           '~> 3.3.4.1'
 
+gem 'chartkick',                 '~> 1.3.2'
 gem 'coffee-rails',             '~> 4.1.0'
 
 gem 'devise',                   '~> 3.4.1'
 
 gem 'faker',                    github: 'conradwt/faker'
 gem 'figaro',                   '~> 1.1.0'
+
+gem 'groupdate',                '~>2,4,0'
 
 gem 'jbuilder',                 '~> 2.0'
 gem 'jquery-rails',             '~> 4.0.3'
