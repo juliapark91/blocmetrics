@@ -20,6 +20,8 @@
     <button class="btn btn-primary" type="button">
     Total Events <span class="badge"><%= @events.count %></span>
     </button>
+      <%= pie_chart @registered_application.events.group(:name).count %>
+      <%= line_chart @registered_application.events.group_by_day(:created_at).count %>
   </div>
 <% end %>
 
