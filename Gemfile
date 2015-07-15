@@ -11,7 +11,7 @@ gem 'coffee-rails',             '~> 4.1.0'
 
 gem 'devise',                   '~> 3.4.1'
 
-gem 'faker',                    github: 'conradwt/faker'
+gem 'faker'
 gem 'figaro',                   '~> 1.1.0'
 
 gem 'groupdate',                '~> 2.4.0'
